@@ -13,3 +13,26 @@ When a daemon starts up, it has to do some low-level housework to get itself rea
 5. Change the current working directory to a safe place
 6. Close standard file descriptors
 7. Enter actual daemon code
+
+### network
+
+1. remove virtual network interface
+```shell
+sudo ip link set dev outline-tun0 down
+```
+
+2. edit host file
+```shell
+# edit this file
+vim /etc/hosts
+```
+
+3. nslookup(name server lookup)
+```shell
+# debian should install dnsutils
+sudo apt install dnsutils
+```
+
+### package management(apt/yum)
+
+> https://www.debian.org/doc/manuals/debian-reference/ch02.en.html
