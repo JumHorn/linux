@@ -14,6 +14,13 @@ When a daemon starts up, it has to do some low-level housework to get itself rea
 6. Close standard file descriptors
 7. Enter actual daemon code
 
+#### manager services(systemctl)
+
+```shell
+sudo systemctl disable geoclue.service
+sudo systemctl mask geoclue.service # prohibit to /dev/null
+```
+
 ### network
 
 1. remove virtual network interface
