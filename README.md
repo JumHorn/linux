@@ -52,3 +52,10 @@ sudo apt install dnsutils
 # 执行mount命令,查看所有挂载
 mount
 ```
+
+## /mnt vs /media
+
+/media for system use
+/mnt for user use
+在debian上，如果mount到/media下的存储设备,gnome的filemanager是可以看到的
+mount到其他位置上只有自己能看到
