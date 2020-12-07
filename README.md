@@ -1,8 +1,8 @@
 # linux
 
-### shell
+## shell
 
-### daemon
+## daemon
 
 When a daemon starts up, it has to do some low-level housework to get itself ready for its real job
 
@@ -14,14 +14,14 @@ When a daemon starts up, it has to do some low-level housework to get itself rea
 6. Close standard file descriptors
 7. Enter actual daemon code
 
-#### manager services(systemctl)
+### manager services(systemctl)
 
 ```shell
 sudo systemctl disable geoclue.service
 sudo systemctl mask geoclue.service # prohibit to /dev/null
 ```
 
-### network
+## network
 
 1. remove virtual network interface
 ```shell
@@ -40,6 +40,15 @@ vim /etc/hosts
 sudo apt install dnsutils
 ```
 
-### package management(apt/yum)
+## package management(apt/yum)
 
 > https://www.debian.org/doc/manuals/debian-reference/ch02.en.html
+
+## permissions
+
+* root用户也无法删除只读文件，所以要先修改权限
+* root用户无法删除挂载的只读文件,修改权限也无法在挂载的文件上实现,要找到原文件的位置
+```shell
+# 执行mount命令,查看所有挂载
+mount
+```
