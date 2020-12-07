@@ -41,4 +41,15 @@ sed -i "1 s/^/abc/"
 ## unique
 ## du/df
 ## find
+### -prune
+
+You pretty much always want the -o (logical OR) immediately after -prune, because that first part of the test (up to and including -prune) will return false for the stuff you actually want (ie: the stuff you don't want to prune out).
+```shell
+find [path] [conditions to prune] -prune -o \
+            [your usual conditions] [actions to perform]
+
+# example
+find . -name filename -prune -o -name '*.foo' -print
+find . -path pathname -prune -o -name '*.foo' -print
+```
 ## netstat

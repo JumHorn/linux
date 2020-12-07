@@ -10,7 +10,7 @@
 1. 查找文件 \
 find / -name RegularExpressions
 2. 排除权限不足文件 \
-find / -name git 2</dev/null
+find / -name git 2>/dev/null
 
 # whereis
 查找命令的帮助文档和二进制文件
@@ -59,9 +59,9 @@ route get default
 # scp
 scp [参数] [原路径] [目标路径]
 1. 传输文件 \
-scp local_file remote_username@remote_ip:remote_folder  
+scp local_file remote_username@remote_ip:remote_folder
 2. 传输文件夹 \
-scp -r local_folder remote_username@remote_ip:remote_folder  
+scp -r local_folder remote_username@remote_ip:remote_folder
 
 # tar
 > https://www.tecmint.com/18-tar-command-examples-in-linux/
@@ -76,8 +76,8 @@ tar cvf[z] compressedfilename directory \
 压缩等级 z是gzip j是tar.bz2更高 没有表示不压缩 \
 
 * 解压缩 \
-tar xvf compressedfilename -C directory  
-x表示解压缩 
+tar xvf compressedfilename -C directory
+x表示解压缩
 
 * 查看压缩文件内容 \
 tar tvf compressedfilename \
@@ -120,7 +120,7 @@ ifconfig eth0 hw ether 10:81:84:00:10:06
 相关命令sha256sum，sha512sum
 
 # shell 重定向
-1. ps 看到设备名  
+1. ps 看到设备名
 pts/0 bash \
 pts/0 ps
 
