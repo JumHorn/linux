@@ -65,3 +65,6 @@ mount到其他位置上只有自己能看到
 sudo systemctl set-default multi-user.target # disable GUI
 sudo systemctl set-default graphical.target # enable GUI
 ```
+
+## wifi
+wpa_cli
