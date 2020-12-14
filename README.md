@@ -120,3 +120,17 @@ sudo wpa_cli set_network 1 ssid '"network_name"'
 sudo wpa_cli set_network 1 psk '"passwd"'
 sudo wpa_
 ```
+
+## linux tty字体样式配置
+```shell
+sudo dpkg-reconfigure console-setup
+```
+
+## console locales(UTF8字符配置)
+默认tty不能显示中文
+```shell
+# 安装
+sudo apt-get install fbterm
+# 启动
+fbterm
+```
