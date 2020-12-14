@@ -11,10 +11,10 @@
 |$$|The process number of the current shell. For shell scripts, this is the process ID under which they are executing.|
 |$!|The process number of the last background command.|
 
-
+# site
+> https://explainshell.com/#
 
 # redirect(重定向Piples)
-
 ## grep
 
 很多重定向命令配合grep使用
@@ -53,3 +53,13 @@ find . -name filename -prune -o -name '*.foo' -print
 find . -path pathname -prune -o -name '*.foo' -print
 ```
 ## netstat
+```shell
+netstat -antp
+```
+
+## unar
+
+centos下解压rar文件
+```shell
+unar filename
+```

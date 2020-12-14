@@ -90,11 +90,22 @@ another way to solve this problem is to add evironment variable whitch I don't l
 
 # others
 1. embedded macro
-> gcc -dM -E -\</dev/null
+```shell
+gcc -dM -E -\</dev/null
+```
 
 2. default include path
 * clang
-> echo | clang -v -E -x c++ -
+```shell
+echo | clang -v -E -x c++ -
+```
 
 * gcc
-> echo | gcc -E -Wp,-v -s
+```shell
+echo | gcc -E -Wp,-v -s
+```
+
+3. default search path
+```shell
+gcc -print-search-dirs
+```
