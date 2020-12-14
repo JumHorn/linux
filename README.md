@@ -66,7 +66,31 @@ sudo systemctl set-default multi-user.target # disable GUI
 sudo systemctl set-default graphical.target # enable GUI
 ```
 
-## wpa_cli
+## nmcli(network manager)
+> https://www.96boards.org/documentation/consumer/guides/wifi_commandline.md.html
+
+1. 创建一个新的wifi连接
+```shell
+# 显示可以连接的无线网
+nmcli dev wifi list
+# 连接wifi
+nmcli dev wifi connect SSID_Name password wireless_password
+```
+
+2. 其他命令
+```shell
+# 显示子命令帮助
+nmcli con -h
+nmcli dev -h
+# 显示本机所有连接
+nmcli con show
+# 启用连接
+nmcli con up WiFi
+nmcli general status
+nmcli device status
+```
+
+## wpa_cli(not recommend)
 1. wpa_cli交互模式
 ```shell
 sudo wpa_cli
@@ -91,28 +115,4 @@ dhcpcd eth0
 sudo wpa_cli set_network 1 ssid '"network_name"'
 sudo wpa_cli set_network 1 psk '"passwd"'
 sudo wpa_
-```
-
-## nmcli(network manager)
-> https://www.96boards.org/documentation/consumer/guides/wifi_commandline.md.html
-
-1. 创建一个新的wifi连接
-```shell
-# 用wifi名做连接名即可
-nmcli con add con-name WiFi ifname wlan0 type wifi ssid foonet
-# 输入密码
-nmcli con modify WiFi wifi-sec.key-mgmt wpa-psk
-nmcli con modify WiFi wifi-sec.psk myownpassword
-# 启用连接
-nmcli con up WiFi
-```
-
-2. 其他命令
-```shell
-# 显示可以连接的无线网
-nmcli dev wifi list
-# 显示本机所有连接
-nmcli con show
-nmcli general status
-nmcli device status
 ```
