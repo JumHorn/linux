@@ -133,4 +133,11 @@ sudo dpkg-reconfigure console-setup
 sudo apt-get install fbterm
 # 启动
 fbterm
+
+# add to ~/.bashrc to automatically start
+fbterm &>/dev/null
 ```
+
+## usb device descriptor error -71
+
+关机后再开机(重启无效)
