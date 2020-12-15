@@ -160,3 +160,8 @@ g/\/\//d 删除所有以双斜杠开始的注释(g表示go to line,d表示delete
 1. guw/gUw
 2. gguG/ggUG
 3. ggu3g
+
+# 保存不执行格式化
+```vim
+:noa wq
+```
