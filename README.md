@@ -55,8 +55,8 @@ mount
 
 ## /mnt vs /media
 
-/media for system use
-/mnt for user use
+/media for system use \
+/mnt for user use \
 在debian上，如果mount到/media下的存储设备,gnome的filemanager是可以看到的
 mount到其他位置上只有自己能看到
 
@@ -141,3 +141,13 @@ fbterm &>/dev/null
 ## usb device descriptor error -71
 
 关机后再开机(重启无效)
+
+## Tmux(terminal multiplexer)
+terminal 分屏必用神器
+
+1. 支持鼠标操作
+
+~/.tmux.conf
+```conf
+set -g mouse on
+```
