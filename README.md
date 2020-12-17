@@ -1,6 +1,14 @@
 # linux
 
 ## shell
+### alias
+```shell
+# 设置alias将mac上命令不同的名字设置为linux下的名字
+# alias ldd='otool -L'
+# alias brew='HOMEBREW_NO_AUTO_UPDATE=1 brew'
+alias ls='ls -F --color=auto'
+alias grep='grep --color=auto'
+```
 
 ## daemon
 
