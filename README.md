@@ -159,3 +159,13 @@ terminal 分屏必用神器
 ```conf
 set -g mouse on
 ```
+
+## /proc
+```shell
+# 相关配置路径
+/proc/sys/
+# 随机端口范围
+/proc/sys/net/ipv4/ip_local_port_range
+# 文件fd最大值
+/proc/sys/fs/file-max
+```

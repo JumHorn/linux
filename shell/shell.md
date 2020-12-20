@@ -11,7 +11,7 @@
 |$$|The process number of the current shell. For shell scripts, this is the process ID under which they are executing.|
 |$!|The process number of the last background command.|
 
-# site
+# 优秀网站
 > https://explainshell.com/#
 
 # redirect(重定向Piples)
@@ -37,9 +37,11 @@ example
 sed -i "1i s/^/abc/"
 sed -i "1 s/^/abc/"
 ```
+
 ## sort
 ## unique
 ## du/df
+
 ## find
 ### -prune
 
@@ -62,4 +64,34 @@ netstat -antp
 centos下解压rar文件
 ```shell
 unar filename
+```
+
+## top
+以下按键区分大小写
+
+* 按内存排序
+
+top界面按下M键(大写)
+* 按CPU排序
+
+top界面按下P键(大写)
+
+* cpu使用率展示方式
+
+t(小写)可再次按下切换多种样式
+* 内存展示方式切换
+
+m(小写)可再次按下切换多种样式
+
+* 内存单位切换 e(小写)
+* 保存配置 W(大写)
+* 显示管理 f(小写)
+* 显示帮助 h(小写)
+* 显示用于排序的列 x(小写)
+* 杀死进程 k(小写)
+* 彩色显示 z(小写)
+
+1. 显示单个应用程序信息
+```shell
+top -p PID
 ```
