@@ -29,13 +29,28 @@ example
 
 # shell command
 
-## sed
+## regular expressions
+> https://www.tutorialspoint.com/unix/unix-regular-expressions.htm
 
+> https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/
+
+以下软件通用的正则表达式
+1. sed(stream edit)
+2. ed
+3. awk
+4. grep
+5. vi/vim
+
+## 例子
 1. sed的命令和vim的文本操作命令很像
 ```shell
-# 在第一行插入abc,带i表示换行,不带i表示插入不换行
-sed -i "1i s/^/abc/"
-sed -i "1 s/^/abc/"
+# 在第一行行首插入abc,带i表示换行,不带i表示插入不换行
+sed -i "1i s/^/abc/" input
+sed -i "1 s/^/abc/" input
+# 在第一行行尾插入
+sed -i "1 s/$/abc/" input
+# 默认只替换第一个匹配到的字符,-g全部替换
+sed -i "s/abc/xyz/g" input
 ```
 
 ## sort
