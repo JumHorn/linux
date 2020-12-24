@@ -109,3 +109,8 @@ echo | gcc -E -Wp,-v -s
 ```shell
 gcc -print-search-dirs
 ```
+
+4. show compile time search path
+```shell
+g++ -v filename.cpp
+```
