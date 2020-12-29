@@ -165,3 +165,10 @@ g/\/\//d 删除所有以双斜杠开始的注释(g表示go to line,d表示delete
 ```vim
 :noa wq
 ```
+
+# FAQ
+## save read only file
+```shell
+# !sudo call sudo command
+:w !sudo tee %
+```
