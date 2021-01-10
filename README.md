@@ -48,6 +48,11 @@ vim /etc/hosts
 sudo apt install dnsutils
 ```
 
+4. 修改mac地址
+```shell
+sudo ifconfig en0 ether d4:61:9d:32:3f:cf
+```
+
 ## package management(apt/yum)
 
 > https://www.debian.org/doc/manuals/debian-reference/ch02.en.html
@@ -102,33 +107,6 @@ nmcli general status
 nmcli device status
 ```
 
-## wpa_cli(not recommend)
-1. wpa_cli交互模式
-```shell
-sudo wpa_cli
-# 查找网络
-scan
-# 显示查找结果
-scan_results
-#
-add_network
-#
-set_network 1 ssid "network_name"
-set_network 1 psk "passwd"
-list_networks
-enable_network 1
-select_network 1
-save_config
-dhcpcd eth0
-```
-2. wpa_cli非交互模式
-```shell
-# 单引号必须要
-sudo wpa_cli set_network 1 ssid '"network_name"'
-sudo wpa_cli set_network 1 psk '"passwd"'
-sudo wpa_
-```
-
 ## linux tty字体样式配置
 ```shell
 sudo dpkg-reconfigure console-setup
@@ -169,3 +147,5 @@ set -g mouse on
 # 文件fd最大值
 /proc/sys/fs/file-max
 ```
+
+##
