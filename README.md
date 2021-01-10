@@ -52,6 +52,14 @@ sudo apt install dnsutils
 ```shell
 sudo ifconfig en0 ether d4:61:9d:32:3f:cf
 ```
+```shell
+ip link set dev eth0 address XX:XX:XX:XX:XX:XX
+```
+
+5. 恢复默认mac地址
+```shell
+ethtool -P eth0
+```
 
 ## package management(apt/yum)
 
