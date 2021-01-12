@@ -61,11 +61,11 @@ or shortcut ctrl + l
 * reverse ssh tunnel(反向连接)
 ```shell
 # local host
-ssh -R 12345:localhost:22 remoteIP
+ssh -R 2022:localhost:22 root@remoteIP
 ```
 ```shell
 # remote host
-ssh -p 12345 localhost
+ssh -p 2022 root@localhost
 ```
 
 * 免密码登录
