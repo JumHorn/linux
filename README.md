@@ -50,9 +50,11 @@ sudo apt install dnsutils
 
 4. 修改mac地址
 ```shell
+# for MacOS
 sudo ifconfig en0 ether d4:61:9d:32:3f:cf
 ```
 ```shell
+# for linux
 ip link set dev eth0 address XX:XX:XX:XX:XX:XX
 ```
 
