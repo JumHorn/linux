@@ -61,11 +61,19 @@ or shortcut ctrl + l
 * reverse ssh tunnel(反向连接)
 ```shell
 # local host
-ssh -R 2022:localhost:22 root@remoteIP
+ssh -fCNR 2022:localhost:22 root@remoteIP
 ```
 ```shell
 # remote host
-ssh -p 2022 root@localhost
+ssh root@localhost -p 2022
+```
+* autossh
+```shell
+# not stable
+autossh -M 12022 -fNCR 2022:localhost:22 root@remoteIP
+```
+```shell
+autossh -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -M 12022 -fNCR 2022:localhost:22 root@remoteIP
 ```
 
 * 免密码登录
@@ -133,9 +141,13 @@ t表示listcontent
 
 # 路径切换
 1. 回到家目录
-> cd ~ 或者直接cd即可
+```shell
+cd ~ # 或者直接cd即可
+```
 2. 回到前一次路径
-> cd -
+```shell
+cd -
+```
 
 # 执行shell脚本
 1. sh执行shell脚本 \
