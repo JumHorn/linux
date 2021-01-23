@@ -15,6 +15,23 @@
 > https://explainshell.com/#
 
 # redirect(重定向Piples)
+## 重定向字符串到stdin
+1. one-line
+```shell
+cat <<< "this is coming from stdin"
+```
+2. delimiter
+```shell
+cat << EOF
+line1
+line2
+EOF
+```
+3. file
+```shell
+cat < filename
+```
+
 ## grep
 
 很多重定向命令配合grep使用

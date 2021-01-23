@@ -158,4 +158,8 @@ set -g mouse on
 /proc/sys/fs/file-max
 ```
 
-##
+## great tools
+* glances
+* sysbench
+* pstack
+* perf

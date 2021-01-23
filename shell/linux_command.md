@@ -67,6 +67,13 @@ ssh -fCNR 2022:localhost:22 root@remoteIP
 # remote host
 ssh root@localhost -p 2022
 ```
+* 反向链接网管配置
+
+允许外网连接配置,需要反向代理开放端口的机器上配置/etc/ssh/sshd_config
+```config
+GatewayPorts yes
+```
+
 * autossh
 ```shell
 # not stable

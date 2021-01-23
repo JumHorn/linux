@@ -24,3 +24,5 @@ sudo ettercap -T -M arp:remote /192.168.31.1// /192.168.31.68//
 ```
 
 ## driftnet
+## upx
+## od
