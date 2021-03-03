@@ -73,6 +73,17 @@ sed -i "s/abc/xyz/g" input
 ## sort
 ## unique
 ## du/df
+## nc
+1. tcp example
+```shell
+# server
+nc -lvp port
+# client
+nc address port
+```
+## screen
+
+功能和tmux重复，可以直接学习tmux
 
 ## find
 ### -prune

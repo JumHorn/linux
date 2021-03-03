@@ -9,6 +9,37 @@
 alias ls='ls -F --color=auto'
 alias grep='grep --color=auto'
 ```
+### 命令后台运行
+1. nohup
+```shell
+nohup command &
+```
+2. setsid
+```shell
+setsid command &
+```
+3. disown
+```shell
+disown -h %1
+```
+4. subshell
+```shell
+(command $)
+```
+
+### 命令前后台切换
+1. 停止当前进程(ctrl + z)
+2. 查看所有进程(jobs)
+3. 切换到前台进程(fg)
+4. 切换到后台进程(bg)
+5. 演示例子
+```shell
+nc -lvp 1234 & # 命令后台执行
+jobs # 查看后台执行命令编号
+fg 1 # 将后台命令调到前台执行
+ctrl + z # 停止当前进程
+bg 1 # 将进程调到后台继续执行
+```
 
 ## daemon
 
