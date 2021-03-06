@@ -41,6 +41,25 @@ ctrl + z # 停止当前进程
 bg 1 # 将进程调到后台继续执行
 ```
 
+### 命令历史查询
+1. 查看历史命令
+```shell
+history
+history 5 # the last 5 commands
+```
+2. 执行上一条命令
+```shell
+!!
+!-1
+```
+3. 执行具体命令
+```shell
+!+命令编号
+!445
+```
+4. even more
+> https://www.digitalocean.com/community/tutorials/how-to-use-bash-history-commands-and-expansions-on-a-linux-vps
+
 ## daemon
 
 When a daemon starts up, it has to do some low-level housework to get itself ready for its real job
