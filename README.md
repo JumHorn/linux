@@ -24,7 +24,7 @@ disown -h %1
 ```
 4. subshell
 ```shell
-(command $)
+(command &)
 ```
 
 ### 命令前后台切换
