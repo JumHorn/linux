@@ -154,6 +154,11 @@ nmcli dev wifi connect SSID_Name password wireless_password
 nmcli con modify con_name ipv4.method manual ipv4.address 192.168.10.155/24
 ```
 
+3. 重启wifi
+```shell
+systemctl restart network-manager
+```
+
 3. 其他命令
 ```shell
 # 显示子命令帮助
