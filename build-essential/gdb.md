@@ -26,21 +26,27 @@ disassemble /m \
 源码和汇编代码一起排列
 
 # 设置参数
-
-set args \
+```
+set args
 show args
+```
 
 # 设置运行路径
-
-set dir \
+```
+set dir
 show paths
+```
 
 # 显示代码内容
+```
 list
+```
 
 # 多文件断点
+```
 b filename:linenumber
 b filename:functionname
+```
 
 # 查看stl的值
 查看stl值,要了解stl的实现，查看其中的成员和普通的print没什么区别 \
@@ -64,3 +70,13 @@ $4 = 1
 ```
 以上过程可以一步完成,即    p=*(int*)iter \
 gdb中的对象可以直接调用成员函数
+
+# 修改内存
+```shell
+# 0x7fffffffeb4c 为address
+set *(int*)0x7fffffffeb4c=8
+```
+# 修改寄存器
+```
+set $reg = value
+```
