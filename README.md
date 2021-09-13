@@ -203,6 +203,10 @@ terminal 分屏必用神器
 set -g mouse on
 ```
 
+2. Mac系统下复制内容
+
+fn加鼠标拖动选中字符，然后正常cmd+c/cmd+v
+
 ## /proc
 ```shell
 # 相关配置路径
