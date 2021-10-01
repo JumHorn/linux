@@ -169,6 +169,8 @@ systemctl restart network-manager
 
 3. 其他命令
 ```shell
+# text UI
+nmtui
 # 显示子命令帮助
 nmcli con -h
 nmcli dev -h
