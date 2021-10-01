@@ -141,6 +141,11 @@ mount
 在debian上，如果mount到/media下的存储设备,gnome的filemanager是可以看到的
 mount到其他位置上只有自己能看到
 
+## bash中单引号和双引号的区别
+简单的说
+单引号 包裹的内容不作变量解析、字符转义操作，只作为普通纯文本原样输出
+双引号 包裹的内容会进行变量解析、字符转义等操作
+
 ## enable/disable GUI
 ```shell
 sudo systemctl set-default multi-user.target # disable GUI
