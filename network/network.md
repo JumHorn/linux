@@ -26,3 +26,21 @@ sudo ettercap -T -M arp:remote /192.168.31.1// /192.168.31.68//
 ## driftnet
 ## upx
 ## od
+
+# iptables
+
+## 删除所有iptables规则
+```shell
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -t nat -F
+iptables -t mangle -F
+iptables -F
+iptables -X
+```
+
+## 显示规则
+```shell
+sudo iptables -t nat -v -L -n --line-number # 显示iptables规则
+```
