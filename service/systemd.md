@@ -20,7 +20,21 @@ User=jumhorn
 WantedBy=multi-user.target
 ```
 
-2. command analysis
+2. start service
+```shell
+sudo systemctl start ssh-tunnel
+```
+
+# FAQ
+* /etc/systemd/system vs /lib/systemd/system
+```shell
+man systemd.unit
+# /etc/systemd/system 用户配置文件
+# /lib/systemd/system (apt/yum/pacman)
+```
+
+* command analysis
+	出问题时之行命令看输出结果分析
 ```shell
 # ssh
 ssh -o "ServerAliveInterval 30" -o "ServerAliveCountMax 100" -NR 2022:localhost:22 root@www.jumhorn.com -i /home/jumhorn/.ssh/id_rsa
