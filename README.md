@@ -1,6 +1,14 @@
 # linux
 
 ## shell
+
+### su
+```shell
+# 发现进入root账户找不到sbin目录下的所有命令
+# 使用su - 或者 su -l表示login shell继承环境变了PATH,PATH可以用export设置
+su -l
+```
+
 ### alias
 ```shell
 # 设置alias将mac上命令不同的名字设置为linux下的名字
@@ -139,7 +147,7 @@ sudo systemctl set-default multi-user.target # disable GUI
 sudo systemctl set-default graphical.target # enable GUI
 ```
 
-## nmcli(network manager)
+## nmcli(network manager) 需要安装
 > https://www.96boards.org/documentation/consumer/guides/wifi_commandline.md.html
 
 1. 创建一个新的wifi连接
