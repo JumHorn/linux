@@ -1,5 +1,5 @@
 # autossh reverse tunnel
-1. service config in /etc/systemd/system
+1. save ssh-tunnel.service in /etc/systemd/system
 ```ini
 # ssh reverse tunnel
 
