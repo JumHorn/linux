@@ -9,6 +9,18 @@
 su -l
 ```
 
+### #!
+
+> https://en.wikipedia.org/wiki/Shebang_(Unix)
+
+It's a convention so the *nix shell knows what kind of interpreter to run
+```shell
+#!/bin/bash
+#!/usr/bin/python
+#!/bin/perl
+```
+
+
 ### alias
 ```shell
 # 设置alias将mac上命令不同的名字设置为linux下的名字
