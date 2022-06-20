@@ -25,6 +25,8 @@ systemctl reload service_name
 ## auto start service
 ```shell
 systemctl enable service_name
+# see it is list in install target
+ls -l /etc/systemd/system/multi-user.target.wants/*.service
 ```
 
 ## disable service
