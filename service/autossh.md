@@ -26,13 +26,6 @@ sudo systemctl start ssh-tunnel
 ```
 
 # FAQ
-* /etc/systemd/system vs /lib/systemd/system
-```shell
-man systemd.unit
-# /etc/systemd/system 用户配置文件
-# /lib/systemd/system (apt/yum/pacman)
-```
-
 * command analysis
 	出问题时之行命令看输出结果分析
 ```shell
