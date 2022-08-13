@@ -169,7 +169,7 @@ git clean -fdx
 # 版本合并
 ## git merge
 	git merge branchname
-	将branch合并到master分支(开发过程中应该多次将mater合并到branches),按提交时间顺序合并
+	将branchname合并到当前所在branch分支(开发过程中应该多次将mater合并到branches),按提交时间顺序合并
 
 ## git rebase
 ```shell
@@ -205,8 +205,21 @@ git log --stat
 ## git reflog
 	查看HEAD指针的commitid
 	救命的功能
-	1. 拯救已经提交的文件
-	2. 拯救未提交已经add的文件
+1. 拯救已经提交的文件
+```shell
+# 不小心使用了git reset commitid --hard退回了之前版本，但是新版本未push到服务器
+git reflog #便于查找commitid
+git checkout commitid
+git branch tmp
+git checkout master
+git merge tmp
+git branch -d tmp
+```
+2. 拯救未提交已经add的文件(暂不可行)
+```shell
+# no luck
+git fsck --unreachable --no-reflogs --no-cache HEAD
+```
 
 # 子模块
 ## git submodule
@@ -292,6 +305,12 @@ git push --force
 	Head detached from xxx
 	Head和master不同步，head超前，master落后
 	回到master会丢失head部分，应该为head新建分支，将分支合并到master
+```shell
+git branch tmp
+git checkout master
+git merge tmp
+git branch -d tmp # 删除创建的tmp分支
+```
 
 ## 文件模式
 	对于使用不同的换行造成的比较时的影响
