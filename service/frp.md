@@ -1,3 +1,7 @@
+# prepare
+1. copy config file to /etc/frp
+2. copy execute file to /usr/local/bin
+
 # frpc client service
 1. save frpc.service in /etc/systemd/system
 ```ini
@@ -10,8 +14,8 @@ Type=simple
 User=nobody
 Restart=on-failure
 RestartSec=5s
-ExecStart=/usr/bin/frpc -c /etc/frp/frpc.ini
-ExecReload=/usr/bin/frpc reload -c /etc/frp/frpc.ini
+ExecStart=/usr/local/bin/frpc -c /etc/frp/frpc.ini
+ExecReload=/usr/local/bin/frpc reload -c /etc/frp/frpc.ini
 LimitNOFILE=1048576
 
 [Install]
@@ -20,7 +24,8 @@ WantedBy=multi-user.target
 
 2. start service
 ```shell
-sudo systemctl start frpc
+systemctl enable frpc
+systemctl start frpc
 ```
 
 # frps server service
@@ -35,7 +40,7 @@ Type=simple
 User=nobody
 Restart=on-failure
 RestartSec=5s
-ExecStart=/usr/bin/frps -c /etc/frp/frps.ini
+ExecStart=/usr/local/bin/frps -c /etc/frp/frps.ini
 LimitNOFILE=1048576
 
 [Install]
@@ -44,5 +49,6 @@ WantedBy=multi-user.target
 
 2. start service
 ```shell
-sudo systemctl start frps
+systemctl enable frps
+systemctl start frps
 ```
