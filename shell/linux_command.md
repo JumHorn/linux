@@ -92,7 +92,7 @@ ssh -fCNR 2022:localhost:22 root@remoteIP
 # remote host
 ssh root@localhost -p 2022
 ```
-* 反向链接网管配置
+* 反向链接网关配置
 
 允许外网连接配置,需要反向代理开放端口的机器上配置/etc/ssh/sshd_config
 ```config
@@ -113,6 +113,15 @@ autossh -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -M 12022 -fNCR 20
 1. ssh-keygen
 ```shell
 ssh-keygen -t rsa -C "some content(git example gmail)"
+```
+
+* 允许特定用户密码登录
+
+	编辑/etc/ssh/sshd_config
+```
+Match User <username>
+PasswordAuthentication yes
+Match all
 ```
 
 2. ssh-copy-id user@ip_address
