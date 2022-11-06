@@ -66,7 +66,7 @@ ssh -L [localhost]:localport:serverhost:serverport username@serverhost
 ```
 2. 从server端口访问client端口
 ```shell
-ssh -R [localhost]:localport:serverhost:serverport username@serverhost
+ssh -R [serverhost]:serverport:localhost:localport username@serverhost
 ```
 3. 用server代理client访问外网(socks)
 ```shell
