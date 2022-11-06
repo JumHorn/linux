@@ -58,6 +58,31 @@ cls for Dos and clear for linux/Mac \
 or shortcut ctrl + l
 
 # ssh
+
+	ssh用作代理的4种模式命令
+1. 从client端口访问server端口
+```shell
+ssh -L [localhost]:localport:serverhost:serverport username@serverhost
+```
+2. 从server端口访问client端口
+```shell
+ssh -R [localhost]:localport:serverhost:serverport username@serverhost
+```
+3. 用server代理client访问外网(socks)
+```shell
+ssh -D [localhost]:localport username@serverhost
+```
+4. 用client代理server访问内网(socks)
+```shell
+ssh -R [serverhost]:serverport username@serverhost
+```
+
+## 其他参数
+1. -N 不执行命令，仅代理端口
+2. -f 后台运行
+3. -C 数据压缩
+
+## 例子
 * reverse ssh tunnel(反向连接)
 ```shell
 # local host
