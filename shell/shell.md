@@ -34,14 +34,18 @@ cat < filename
 
 ## grep
 
-很多重定向命令配合grep使用
+	很多重定向命令配合grep使用
+```shell
 grep -v # 反向查找不存在的字符串
+```
 
 ## xargs
 
-example
+	example
 1. find -name *.cpp | xargs file #显示所有文件信息
+
 2. ls -l *.cpp | xargs wc -l  #统计当前目录下所有cpp的代码行数
+
 3. grep -IUrl $'\r' . | xargs -I{} cp {} ../ # 将所有换行符为CRLF的文件copy到上一层目录
 
 # shell command
@@ -51,7 +55,7 @@ example
 
 > https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/
 
-以下软件通用的正则表达式
+	以下软件通用的正则表达式
 1. sed(stream edit)
 2. ed
 3. awk
@@ -83,12 +87,13 @@ nc address port
 ```
 ## screen
 
-功能和tmux重复，可以直接学习tmux
+	功能和tmux重复，可以直接学习tmux.
+	google cloud也通过tmux提供服务
 
 ## find
 ### -prune
 
-You pretty much always want the -o (logical OR) immediately after -prune, because that first part of the test (up to and including -prune) will return false for the stuff you actually want (ie: the stuff you don't want to prune out).
+	You pretty much always want the -o (logical OR) immediately after -prune, because that first part of the test (up to and including -prune) will return false for the stuff you actually want (ie: the stuff you don't want to prune out).
 ```shell
 find [path] [conditions to prune] -prune -o \
             [your usual conditions] [actions to perform]
@@ -110,21 +115,22 @@ unar filename
 ```
 
 ## top
-以下按键区分大小写
+
+	以下按键区分大小写
 
 * 按内存排序
 
-top界面按下M键(大写)
+	top界面按下M键(大写)
 * 按CPU排序
 
-top界面按下P键(大写)
+	top界面按下P键(大写)
 
 * cpu使用率展示方式
 
-t(小写)可再次按下切换多种样式
+	t(小写)可再次按下切换多种样式
 * 内存展示方式切换
 
-m(小写)可再次按下切换多种样式
+	m(小写)可再次按下切换多种样式
 
 * 内存单位切换 e(小写)
 * 保存配置 W(大写)

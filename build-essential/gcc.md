@@ -72,16 +72,16 @@ gcc [*.o]  -Lpath/to/sharedlibrary -lsharedlibraryname -o path/to/sharedlibraryn
 	so the binary can move to anywhere as long as the relative path never changed
 1. linux
 
-gcc link flag
+	gcc link flag
 ```shell
 -Wl,-rpath,'$ORIGIN'
 ```
 
-there should be one more $ in makefile like this -Wl,rpath,'$$ORIGIN'
+	there should be one more $ in makefile like this -Wl,rpath,'$$ORIGIN'
 
 2. macos
 
-@rpath
+	@rpath
 * for shared library
 ```shell
 g++ -shared ./bin/transmit.o -o ./bin/libFileTransmit.so -install_name @rpath/libFileTransmit.so

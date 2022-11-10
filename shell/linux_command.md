@@ -1,13 +1,14 @@
 # touch filename
 1. 创建文件
 
-该命令在windows下的bash命令行里可以使用。可以方便的在windows下创建以.开始的文件名的文件
+	该命令在windows下的bash命令行里可以使用。可以方便的在windows下创建以.开始的文件名的文件
+
 2. 修改文件时间戳
 ```shell
 touch -c filename
 ```
 
-不创建文件，为已经存在的文件加上最新的时间戳，在编译时可以不改动文件，使得make命令重新编译
+	不创建文件，为已经存在的文件加上最新的时间戳，在编译时可以不改动文件，使得make命令重新编译
 
 # find
 1. 查找文件
@@ -39,7 +40,7 @@ which git
 grep -rn test ./ --include=*.cpp
 ```
 
-递归查找当前目录下的所有cpp文件中包含test的行，并打印行号
+	递归查找当前目录下的所有cpp文件中包含test的行，并打印行号
 
 2. grep管道
 
@@ -49,82 +50,15 @@ ps -A | grep firewalls
 ```
 
 # clear command line
-* clear current line \
+
+* clear current line
 ```shell
 ctrl + u
 ```
+
 * clear all
-cls for Dos and clear for linux/Mac \
-or shortcut ctrl + l
 
-# ssh
-
-	ssh用作代理的4种模式命令
-1. 从client端口访问server端口
-```shell
-ssh -L [localhost]:localport:serverhost:serverport username@serverhost
-```
-2. 从server端口访问client端口
-```shell
-ssh -R [serverhost]:serverport:localhost:localport username@serverhost
-```
-3. 用server代理client访问外网(socks)
-```shell
-ssh -D [localhost]:localport username@serverhost
-```
-4. 用client代理server访问内网(socks)
-```shell
-ssh -R [serverhost]:serverport username@serverhost
-```
-
-## 其他参数
-1. -N 不执行命令，仅代理端口
-2. -f 后台运行
-3. -C 数据压缩
-
-## 例子
-* reverse ssh tunnel(反向连接)
-```shell
-# local host
-ssh -fCNR 2022:localhost:22 root@remoteIP
-```
-```shell
-# remote host
-ssh root@localhost -p 2022
-```
-* 反向链接网关配置
-
-允许外网连接配置,需要反向代理开放端口的机器上配置/etc/ssh/sshd_config
-```config
-GatewayPorts yes
-```
-
-* autossh
-```shell
-# not stable
-autossh -M 12022 -fNCR 2022:localhost:22 root@remoteIP
-```
-```shell
-autossh -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -M 12022 -fNCR 2022:localhost:22 root@remoteIP
-```
-
-* 免密码登录
-
-1. ssh-keygen
-```shell
-ssh-keygen -t rsa -C "some content(git example gmail)"
-```
-
-* 允许特定用户密码登录
-
-	编辑/etc/ssh/sshd_config
-```
-Match User <username>
-PasswordAuthentication yes
-Match all
-```
-
-2. ssh-copy-id user@ip_address
+	cls for Dos and clear for linux/Mac or shortcut ctrl + l
 
 # stat
 查看文件inode和链接信息
@@ -198,8 +132,8 @@ source filename
 相当于. filename之间有空格
 
 # && || 命令
-command1 && command2 表示command1执行成功后再执行command2 \
-||表示command1执行失败后再执行command2
+	command1 && command2 表示command1执行成功后再执行command2
+	||表示command1执行失败后再执行command2
 
 # ip与mac地址配置
 1. ip addr添加和删除ip
@@ -238,10 +172,11 @@ pts/0 ps
 echo string > /dev/pts/1
 ```
 
-3. 特殊情况 \
-qDebug输出在stderr上 \
-所以使用 ./program 2 > /dev/pts/0 \
-例子./program 2>/dev/pts/0 1> /dev/pts/0 2 > /dev/pts/0
+3. 特殊情况
+
+	qDebug输出在stderr上
+	所以使用 ./program 2 > /dev/pts/0
+	例子./program 2>/dev/pts/0 1> /dev/pts/0 2 > /dev/pts/0
 
 # 远程启动带界面程序
 ```shell
