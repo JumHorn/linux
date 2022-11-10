@@ -69,14 +69,17 @@ stat filename
 # netstat
 查看端口和进程pid信息
 ```shell
-netstat -ap | grep port/pid/name
+netstat -antp | grep port/pid/name
 ```
 
 # route
 
-查看路由信息
+	对于双网卡机器，两个网卡要想相互ping通，就要使用到路由表
 ```shell
-route get default
+route # 查看路由信息
+route add default gw 169.254.0.0 # 添加网关
+route add -host 192.168.1.51 reject # 屏蔽ip
+route del default # 删除网关
 ```
 
 # scp
