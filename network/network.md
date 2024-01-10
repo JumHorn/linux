@@ -33,7 +33,7 @@ sudo ettercap -T -M arp:remote /192.168.31.1// /192.168.31.68//
 
 ## 显示规则
 ```shell
-sudo iptables -L # 显示iptables规则,--line-number可以显示规则编号,用于指定删除某条规则
+sudo iptables -vL # 显示iptables规则,--line-number可以显示规则编号,用于指定删除某条规则
 ```
 
 ## 删除一条规则
@@ -60,6 +60,18 @@ rm -rf /etc/iptables && reboot
 ```shell
 iptables -A INPUT -s 192.168.1.0/24 -j ACCEPT
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+```
+
+## 其他
+```shell
+sudo iptables -D # 用于清除规则上的数据统计
+sudo iptables -D INPUT # 删除所有INPUT规则上的数据统计
+sudo iptables -D INPUT 1 # 删除INPUT下第一条规则上的数据统计,编号来自--line-number
+```
+
+## 实战例子
+```shell
+sudo iptables -A INPUT -s 180.101.88.249 -p tcp --dport 22 -j DROP # 禁止该IP对于22端口访问
 ```
 
 # reverse shell
