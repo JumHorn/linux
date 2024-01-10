@@ -22,27 +22,44 @@ sudo ettercap -T -M arp /192.168.31.1// /192.168.31.68//
 #
 sudo ettercap -T -M arp:remote /192.168.31.1// /192.168.31.68//
 ```
-
-## driftnet
-## upx
-## od
+## others
+* driftnet
+* upx
+* od
 
 # iptables
 
-## 删除所有iptables规则
-```shell
-iptables -P INPUT ACCEPT
-iptables -P FORWARD ACCEPT
-iptables -P OUTPUT ACCEPT
-iptables -t nat -F
-iptables -t mangle -F
-iptables -F
-iptables -X
-```
+> https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules
 
 ## 显示规则
 ```shell
-sudo iptables -t nat -v -L -n --line-number # 显示iptables规则
+sudo iptables -L # 显示iptables规则,--line-number可以显示规则编号,用于指定删除某条规则
+```
+
+## 删除一条规则
+```shell
+sudo iptables -D # 用于删除
+sudo iptables -D INPUT # 删除所有INPUT规则
+sudo iptables -D INPUT 1 # 删除INPUT下第一条规则,编号来自--line-number
+```
+
+## 删除所有iptables规则
+```shell
+#开放所有端口
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -F
+#Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它
+apt-get purge netfilter-persistent
+#删除配置文件后需要重启
+rm -rf /etc/iptables && reboot
+```
+
+## 添加防火墙规则
+```shell
+iptables -A INPUT -s 192.168.1.0/24 -j ACCEPT
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 ```
 
 # reverse shell
