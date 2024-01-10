@@ -71,7 +71,13 @@ sudo iptables -D INPUT 1 # 删除INPUT下第一条规则上的数据统计,编�
 
 ## 实战例子
 ```shell
-sudo iptables -A INPUT -s 180.101.88.249 -p tcp --dport 22 -j DROP # 禁止该IP对于22端口访问
+# 禁止该IP对于22端口访问
+sudo iptables -A INPUT -s 180.101.88.249 -p tcp --dport 22 -j DROP
+
+# 只允许固定IP对22端口访问，这是规则链是什么意思就很明确了，先过第一条检查该IP，在走第二条规则
+# 如果两条规则反过来就错了
+sudo iptables -A INPUT -p tcp --dport 22 -s 允许的IP地址 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 22 -j DROP
 ```
 
 # reverse shell
