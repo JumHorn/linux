@@ -64,9 +64,9 @@ iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 
 ## 其他
 ```shell
-sudo iptables -D # 用于清除规则上的数据统计
-sudo iptables -D INPUT # 删除所有INPUT规则上的数据统计
-sudo iptables -D INPUT 1 # 删除INPUT下第一条规则上的数据统计,编号来自--line-number
+sudo iptables -Z # 用于清除规则上的数据统计
+sudo iptables -Z INPUT # 删除所有INPUT规则上的数据统计
+sudo iptables -Z INPUT 1 # 删除INPUT下第一条规则上的数据统计,编号来自--line-number
 ```
 
 ## 实战例子
